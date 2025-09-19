@@ -1,0 +1,9 @@
+.product-detail {
+  margin: 30px auto;
+  width: 1300px;
+  height: 430px;
+  box-shadow: 0 0 10px blue;
+
+  display: grid;
+  grid-template-columns: auto;
+}

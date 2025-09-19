@@ -1,0 +1,48 @@
+#body-container {
+  min-height: 80vh; /* fill most of screen */
+  background-image: url("./bg-img.jpg"); /* put your image in public/images/ */
+  background-size: cover; /* scale to cover entire area */
+  background-position: center; /* center the image */
+  background-repeat: no-repeat; /* don’t repeat */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+#main-heading {
+  font-family: cursive;
+  font-size: 50px;
+  text-align: center;
+}
+
+#content {
+  font-family: cursive;
+  font-size: 20px;
+  text-align: center;
+  padding: 140px, 40px;
+}
+#content {
+  font-size: 22px;
+  max-width: 600px; /* keep paragraph readable */
+  line-height: 1.6;
+}
+
+.transparent-btn {
+  background: transparent; /* no background */
+  border: 2px solid rgb(20, 221, 40); /* visible border */
+  color: white; /* text color */
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.6);
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  font-size: 26px;
+  border-radius: 8px; /* rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: cursive;
+}
+
+.transparent-btn:hover {
+  background: rgba(255, 255, 255, 0.2); /* light transparent hover effect */
+}

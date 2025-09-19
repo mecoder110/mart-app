@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-function Navbar() {
+function Navbar({setIsLogin}) {
   return (
     <div className="nav">
       <div id="brand">
@@ -17,7 +17,7 @@ function Navbar() {
         <i style={{ fontSize: "27px" }} className="bi bi-bag-check"></i>
         <i style={{ fontSize: "27px" }} className="bi bi-suit-heart-fill"></i>
 
-        <button>Logout</button>
+        <button type="button" onClick={()=>setIsLogin(false)}>Logout</button>
       </div>
     </div>
   );

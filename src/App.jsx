@@ -4,13 +4,18 @@ import { Route, Routes } from "react-router-dom";
 import Profile from "./components/profile/Profile.jsx";
 import Contactus from "./components/contact-us/Contactus.jsx";
 import ProductDetails from "./components/product-details/ProductDetails.jsx";
+import Signin from "./components/sign-in/Signin.jsx";
+import { useState } from "react";
+import Container from "./components/container/Container.jsx";
 
 function App() {
+ const [isLogin, setIsLogin]= useState(false)
   return (
     <div id="app">
-      <Navbar></Navbar>
-
-      <Routes>
+      {isLogin ? <Navbar setIsLogin={setIsLogin}/> : null}
+      <Container isLogin={isLogin} setIsLogin={setIsLogin}></Container>
+     
+      {/* <Routes>
         <Route path={"/"} element={<Products />}></Route>
         <Route path={"/products"} element={<Products />}></Route>
         <Route path={"/profile"} element={<Profile />}></Route>
@@ -19,7 +24,7 @@ function App() {
           path={"/product-details/:id"}
           element={<ProductDetails />}
         ></Route>
-      </Routes>
+      </Routes> */}
     </div>
   );
 }

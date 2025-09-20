@@ -7,24 +7,24 @@ import ProductDetails from "./components/product-details/ProductDetails.jsx";
 import Signin from "./components/sign-in/Signin.jsx";
 import { useState } from "react";
 import Container from "./components/container/Container.jsx";
+import { myContext } from "./components/contaxt-api/Context.js";
 
 function App() {
- const [isLogin, setIsLogin]= useState(false)
+  const [isLogin, setIsLogin] = useState(false);
+
+  function login() {
+    setIsLogin(true);
+  }
+  function logout() {
+    setIsLogin(false);
+  }
+
   return (
     <div id="app">
-      {isLogin ? <Navbar setIsLogin={setIsLogin}/> : null}
-      <Container isLogin={isLogin} setIsLogin={setIsLogin}></Container>
-     
-      {/* <Routes>
-        <Route path={"/"} element={<Products />}></Route>
-        <Route path={"/products"} element={<Products />}></Route>
-        <Route path={"/profile"} element={<Profile />}></Route>
-        <Route path={"/contact-us"} element={<Contactus />}></Route>
-        <Route
-          path={"/product-details/:id"}
-          element={<ProductDetails />}
-        ></Route>
-      </Routes> */}
+      <myContext.Provider value={{ isLogin, login, logout }}>
+        {isLogin ? <Navbar /> : null}
+        <Container></Container>
+      </myContext.Provider>
     </div>
   );
 }
